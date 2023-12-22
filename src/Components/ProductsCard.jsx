@@ -5,18 +5,16 @@ import { useNavigate } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
-  };
   const { _id, name, price, discount, image, rating, stock } = product;
   const handleProductDetails = () => {
     navigate(`/product/${_id}`);
   };
+  console.log(product);
   return (
-    <div className="rounded-lg duration-300 transition ease-in border relative cursor-pointer border-gray-200 hover:shadow-xl shadow-primary hover:border-primary-400">
+    <div className="rounded-lg duration-300 transition ease-in border relative cursor-pointer border-gray-200 hover:shadow-lg hover:shadow-primary/40 hover:border-primary-400">
       <div>
         <div>
-          <div className="bg-primary mt-[2px] text-white text-[8px] md:text-[14px] font-semibold inline-block p-[4px] lg:px-[12px] lg:py-[6px] rounded-tl-[8px] lg:rounded-tl-[10px] rounded-br-[8px] lg:rounded-br-[10px] absolute top-3 left-3">
+          <div className="bg-orange-400 mt-[2px] text-white text-[8px] md:text-[14px] font-semibold inline-block p-[4px] lg:px-[12px] lg:py-[6px] rounded-tl-[8px] lg:rounded-tl-[10px] rounded-br-[8px] lg:rounded-br-[10px] absolute top-3 left-3">
             <p>{discount}% OFF</p>
           </div>
 
@@ -34,7 +32,7 @@ const ProductCard = ({ product }) => {
             </h3>
             <div className="flex justify-between items-center">
               <p className="flex items-center gap-1 md:gap-3">
-                <span className="text-primary-600 text-[12px] md:text-[18px] font-semibold">
+                <span className="text-primary text-[12px] md:text-[18px] font-semibold">
                   ${price}
                 </span>
                 <span className="text-gray-500 text-[10px] md:text-[18px]">
