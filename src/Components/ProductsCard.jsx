@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
 
   // eslint-disable-next-line react/prop-types
-  const { _id, name, price, image, colors } = product;
+  const { _id, name, price, image } = product;
   const handleProductDetails = () => {
     navigate(`/${_id}`);
   };
@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   return (
     <button
       onClick={() => handleProductDetails(_id)}
-      className="rounded-lg duration-300 transition ease-in  relative cursor-pointer border border-transparent hover:shadow-lg hover:shadow-primary/40 hover:border-primary-400 group"
+      className="rounded-lg duration-300 transition ease-in  relative cursor-pointer border border-transparent hover:shadow-lg hover:shadow-primary/40 hover:border-primary-400 group text-start"
     >
       <div>
         <div>
@@ -31,10 +31,6 @@ const ProductCard = ({ product }) => {
                   <del>${200}</del>
                 </span>
               </p>
-              <div className="flex items-center gap-4">
-                <div className={`h-4 w-4 bg-[${colors[0]}] rounded-full`}></div>
-                <div className={`h-4 w-4 bg-[${colors[1]}] rounded-full`}></div>
-              </div>
             </div>
             <button className=" rounded-[5px] py-[4px] md:py-[9px] w-full text-white bg-primary duration-300 invisible group-hover:visible">
               Add to cart

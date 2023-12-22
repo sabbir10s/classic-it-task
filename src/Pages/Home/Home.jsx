@@ -5,7 +5,9 @@ import ProductsCard from "../../Components/ProductsCard";
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("/public/products.json")
+    fetch(
+      "https://raw.githubusercontent.com/sabbir10s/classic-it-task/main/public/products.json"
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

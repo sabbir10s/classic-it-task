@@ -5,10 +5,11 @@
     "company": "BATA",
     "price": 150,
     "discount": 25,
-    "colors": ["#22D3EF", "#22D3EF"],
+    "colors": ["#AB9787", "#000"],
     "image": "https://www.batabd.com/cdn/shop/files/1_9c79c151-a8fc-4071-a5e4-9867011bc468_300x.jpg?v=1703144431",
     "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     "category": "mobile",
+    "sizes": [9, 10, 12],
     "shipping": true
   },
   {
@@ -20,7 +21,8 @@
     "colors": ["#22D3EF", "#27AE60"],
     "image": "https://www.batabd.com/cdn/shop/files/1_38594a88-9473-4dae-a49d-427432a1cede_300x.jpg?v=1702458320",
     "description": "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
-    "category": "laptop"
+    "category": "laptop",
+    "sizes": [8, 11, 10]
   },
 
   {
@@ -33,6 +35,7 @@
     "image": "https://www.batabd.com/cdn/shop/products/1_708d5c1a-8430-4702-b87a-289aee593c6a_300x.jpg?v=1586412766",
     "description": "The Computer is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     "category": "computer",
+    "sizes": [10, 12, 13],
     "shipping": true
   },
   {
@@ -45,6 +48,7 @@
     "image": "https://www.batabd.com/cdn/shop/products/1_14431d83-46b5-4e5c-8345-efd51b2baf7b_300x.jpg?v=1661420526",
     "description": "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     "category": "laptop",
+    "sizes": [14, 15, 16],
     "shipping": true
   },
   {
@@ -57,6 +61,7 @@
     "image": "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     "category": "mobile",
+    "sizes": [9, 10, 12],
     "featured": true
   },
   {
@@ -69,6 +74,7 @@
     "image": "https://images.pexels.com/photos/4224099/pexels-photo-4224099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
     "category": "mobile",
+    "sizes": [7, 8, 11],
     "shipping": true
   }
 ]
