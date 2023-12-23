@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import ProductsCard from "../../Components/ProductsCard";
+import Loading from "../../Components/Loading";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ const Home = () => {
       .then((data) => setProducts(data));
   }, []);
   if (!products.length > 0) {
-    return "Loading";
+    return <Loading />;
   }
 
   return (

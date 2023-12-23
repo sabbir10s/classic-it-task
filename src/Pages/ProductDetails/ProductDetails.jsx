@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../../Components/Loading";
 
 const ProductDetails = () => {
   const { productID } = useParams();
@@ -13,7 +14,7 @@ const ProductDetails = () => {
   const singleProduct = products.find((product) => product._id === productID);
 
   if (!singleProduct) {
-    return <>Loading</>;
+    return <Loading />;
   }
 
   const { name, price, sizes, colors, image, company, description } =
@@ -61,20 +62,21 @@ const ProductDetails = () => {
                 </button>
               ))}
             </div>
-            <div>
-              <div className="flex gap-4 mt-4">
-                {colors.map((color, index) => {
-                  return (
-                    <div
-                      key={index}
-                      style={{ backgroundColor: color }}
-                      className={`h-8 w-8 cursor-pointer focus:ring-2 focus:ring-primary active:ring-2 active:ring-primary`}
-                    />
-                  );
-                })}
-              </div>
-            </div>
           </div>
+          <div className="flex gap-4">
+            {colors.map((color, index) => {
+              return (
+                <div
+                  key={index}
+                  style={{ backgroundColor: color }}
+                  className={`h-8 w-8 cursor-pointer focus:ring-2 focus:ring-primary active:ring-2 active:ring-primary`}
+                />
+              );
+            })}
+          </div>
+          <button className="bg-primary text-white hover:bg-primary-700 hover:shadow-md hover:shadow-primary/50 duration-300 px-10 py-2 rounded">
+            Add to card
+          </button>
         </div>
       </div>
     </div>

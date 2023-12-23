@@ -16,7 +16,7 @@ const Navbar = () => {
           </Link>
           <Link
             to="/register"
-            className="bg-primary hover:shadow-md hover:shadow-primary/50 duration-300 text-white px-4 py-2 rounded"
+            className="bg-primary hover:bg-primary-700 hover:shadow-md hover:shadow-primary/50 duration-300 text-white px-4 py-2 rounded"
           >
             Register
           </Link>
