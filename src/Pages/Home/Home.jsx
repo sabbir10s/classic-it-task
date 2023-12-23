@@ -6,9 +6,7 @@ import Loading from "../../Components/Loading";
 const Home = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/sabbir10s/classic-it-task/main/public/products.json"
-    )
+    fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

@@ -1,17 +1,57 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const onLogin = async (userData) => {
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        console.log(response);
+        const data = await response.json();
+        // console.log(token);
+        const { token } = data;
+        localStorage.setItem("token", token);
+        toast.success(data.message);
+        navigate("/");
+        window.location.reload();
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error(error);
+    }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    onLogin({ email, password });
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <div className="">
       <div className="max-w-[400px] border p-4 lg:p-6 mx-auto">
         <h2 className="text-2xl font-semibold text-center mb-8 ">Login</h2>
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          action="#"
-          className="space-y-5"
-        >
+        <form onSubmit={handleLogin} action="#" className="space-y-5">
           <div className="text-center">
             <input
+              required={true}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="px-4 py-3  rounded-lg w-full focus:border-primary outline-none border"
               type="email"
               placeholder="Email"
@@ -19,15 +59,12 @@ const Login = () => {
           </div>
           <div className=" text-center">
             <input
+              required={true}
+              onChange={(e) => setPassword(e.target.value)}
               className="px-4 py-3  rounded-lg w-full focus:border-primary outline-none border"
               type="password"
               placeholder="Password"
             />
-          </div>
-          <div className="text-end">
-            <button className="inline-block text-secondary-600 font-semibold cursor-pointer hover:underline">
-              Forgot password?
-            </button>
           </div>
           <div>
             <button className="w-full py-2 rounded bg-primary hover:bg-primary-700 hover:shadow-md hover:shadow-primary text-white">
@@ -45,6 +82,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };
