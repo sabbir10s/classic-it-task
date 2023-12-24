@@ -32,7 +32,7 @@ const CartItems = ({ color, size, quantity, item }) => {
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <span>Color:</span>
                 <div
-                  className="h-4 w-4 rounded-full"
+                  className="h-4 w-4 rounded-full border border-primary-400"
                   style={{ backgroundColor: color }}
                 ></div>
               </div>
@@ -52,7 +52,7 @@ const CartItems = ({ color, size, quantity, item }) => {
             <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
               <span>Color:</span>
               <div
-                className="h-4 w-4 rounded-full"
+                className="h-4 w-4 rounded-full border border-primary-400"
                 style={{ backgroundColor: color }}
               ></div>
             </div>

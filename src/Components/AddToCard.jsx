@@ -71,10 +71,10 @@ const AddToCard = ({ product }) => {
               key={index}
               onClick={() => setColor(currentColor)}
               style={{ backgroundColor: currentColor }}
-              className={`h-8 w-8 cursor-pointer text-primary-500 flex items-center justify-center ${
+              className={`h-8 w-8 cursor-pointer  text-primary-500 flex items-center justify-center ${
                 color === currentColor
                   ? "border-2 border-primary"
-                  : "border-2 border-transparent"
+                  : "border-2 border-gray-400"
               }`}
             >
               {color == currentColor ? <FaCheck /> : null}
