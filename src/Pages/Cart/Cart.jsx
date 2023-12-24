@@ -16,20 +16,18 @@ const Cart = () => {
         .then((res) => res.json())
         .then((data) => setCartItems(data.cart));
     }
-  }, [email]); // Trigger the effect when email changes
+  }, [email]);
 
   if (loading) {
     return <Loading />;
   }
 
   const reversedCartItems = [...cartItems].reverse();
-
-  console.log(cartItems);
   return (
-    <div className="container mx-auto px-2">
-      {cartItems.length ? (
+    <div className="container mx-auto px-2 min-h-screen">
+      {!cartItems.length ? (
         <>
-          <div className="mt-4">
+          <div className="mt-4 ">
             <div className=" bg-gray-100 p-1 sm:p-2 rounded-[10px] shadow-custom">
               <div className="hidden md:block">
                 <div className="grid grid-cols-6 px-4 font-semibold py-4 uppercase text-[12px] ">

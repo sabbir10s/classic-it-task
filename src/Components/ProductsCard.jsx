@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import useAuth from "../Provider/useAuth";
 import Loading from "./Loading";
@@ -15,28 +15,24 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     if (!user) {
-      // User not authenticated, handle accordingly (e.g., show a message)
       toast.error("Please log in to add to cart");
       return;
     }
-
-    const cartInfo = { size, color, quantity, product };
     const url = `http://localhost:5000/cart/${email}`;
-
+    const cartInfo = { size, color, quantity, product };
     fetch(url, {
       method: "POST",
       body: JSON.stringify(cartInfo),
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("access-token")}`,
+      },
     })
       .then((res) => res.json())
       .then(() => {
         toast.success("Successfully Added");
-      })
-      .catch((error) => {
-        console.error("Error adding to cart:", error);
-        toast.error("Failed to add to cart. Please try again.");
       });
   };
-
   if (loading) {
     return <Loading />;
   }
@@ -73,6 +69,7 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
       </div>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };
