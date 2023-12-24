@@ -18,7 +18,10 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <div>
             {user && (
-              <Link className="text-4xl  text-yellow-500" to="/cart">
+              <Link
+                className="text-xl md:text-2xl lg:text-4xl  text-yellow-500"
+                to="/cart"
+              >
                 <FaShoppingCart />
               </Link>
             )}
