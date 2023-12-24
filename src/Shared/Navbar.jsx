@@ -6,7 +6,6 @@ import useAuth from "../Provider/useAuth";
 const Navbar = () => {
   const { user, loading, logout } = useAuth();
   const name = user ? user.name : null;
-  console.log(user);
   if (loading) {
     return <Loading />;
   }

@@ -1,6 +1,5 @@
 [
   {
-    "_id": "thapaserialnob",
     "name": "Casual Sneaker",
     "company": "BATA",
     "price": 150,
@@ -8,12 +7,9 @@
     "colors": ["#AB9787", "#000"],
     "image": "https://www.batabd.com/cdn/shop/files/1_9c79c151-a8fc-4071-a5e4-9867011bc468_300x.jpg?v=1703144431",
     "description": "Elevate Your Casual Style with Bata's Contemporary Sneakers!!! Rediscover the essence of casual style with these modern and stylish sneakers from Bata. Designed with a premium suede synthetic and PU upper, and a high-quality TPU sole, these shoes strike the perfect balance between fashion and functionality. Lightweight, comfortable, and durable, these lace-up sneakers are tailored for men who prioritize style even in their everyday activities. Whether you're at work, engaged in play, or socializing, this Bata casual sneaker is versatile enough for all occasions.",
-    "category": "mobile",
-    "sizes": [9, 10, 12],
-    "shipping": true
+    "sizes": [9, 10, 12]
   },
   {
-    "_id": "thapaserialnoc",
     "name": "Hush Puppies Sneaker ",
     "company": "BATA",
     "price": 600,
@@ -25,19 +21,16 @@
   },
 
   {
-    "_id": "thapaserialnoe",
-    "name": "Weinbrenner Sandal For Men",
+    "name": "Weinbrenner Sandal",
     "company": "Apx",
     "price": 499,
     "discount": 15,
     "colors": ["#000", "#CDD0D0"],
     "image": "https://www.batabd.com/cdn/shop/products/1_708d5c1a-8430-4702-b87a-289aee593c6a_300x.jpg?v=1586412766",
     "description": "Kickstart your summer style with this thong sandal from Weinbrenner. A supportive footbed & traction sole will make this flip flop your new go-to when the temperatures rise.",
-    "sizes": [10, 12, 13],
-    "shipping": true
+    "sizes": [10, 12, 13]
   },
   {
-    "_id": "thapaserialnof",
     "name": "Formal Shoe",
     "company": "Apx",
     "price": 429,
@@ -45,33 +38,6 @@
     "colors": ["#000000", "#CDD0D0"],
     "image": "https://www.batabd.com/cdn/shop/products/1_14431d83-46b5-4e5c-8345-efd51b2baf7b_300x.jpg?v=1661420526",
     "description": "Introducing Hush Puppies' exquisite lace-up formal shoe for men, a symbol of refined elegance and impeccable craftsmanship. These shoes are meticulously designed to provide the utmost comfort while exuding sophistication and style, making them a perfect choice for any formal occasion. The upper of these premium formal shoes is expertly crafted using genuine leather, renowned for its luxurious texture and durability. The rich, supple leather not only enhances the shoe's visual appeal but also ensures a comfortable fit that molds to your feet over time. The attention to detail in the stitching and finishing elevates these shoes to a class of their own. For superior traction and flexibility, these formal shoes feature a TPR outsole. Whether you're attending a business meeting, a wedding, or a black-tie event, these formals will provide stability and support throughout the day or evening.",
-    "sizes": [14, 15, 16],
-    "shipping": true
-  },
-  {
-    "_id": "thapaserialnoa",
-    "name": "iphone x",
-    "company": "apple",
-    "price": 6000000,
-    "discount": 20,
-    "colors": ["#ff0000", "#000000", "#CDD0D0"],
-    "image": "https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
-    "category": "mobile",
-    "sizes": [9, 10, 12],
-    "featured": true
-  },
-  {
-    "_id": "thapaserialnod",
-    "name": "Nokia 420",
-    "company": "nokia",
-    "price": 125,
-    "discount": 30,
-    "colors": ["#000", "#000000", "#CDD0D0"],
-    "image": "https://images.pexels.com/photos/4224099/pexels-photo-4224099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
-    "category": "mobile",
-    "sizes": [7, 8, 11],
-    "shipping": true
+    "sizes": [14, 15, 16]
   }
 ]

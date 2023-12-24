@@ -2,7 +2,7 @@ import shoe from "../assets/shoe.png";
 const HeroBanner = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center py-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center py-8 md:py-14">
         <div className=" order-2 md:order-2">
           <h2 className="mb-4 font-bold text-primary text-2xl sm:text-3xl md:text-4xl md:leading-snug	">
             Your Ultimate Destination <br /> for Stylish Shoes.

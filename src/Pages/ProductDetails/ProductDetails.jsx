@@ -4,23 +4,24 @@ import Loading from "../../Components/Loading";
 import AddToCard from "../../Components/AddToCard";
 
 const ProductDetails = () => {
+  const [product, setProduct] = useState(null);
   const { productID } = useParams();
 
-  const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("/public/products.json")
+    fetch(`http://localhost:5000/product/${productID}`)
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+      .then((data) => setProduct(data))
+      .catch((error) => {
+        console.error("Error fetching product:", error);
+        setProduct({});
+      });
+  }, [productID]);
 
-  const singleProduct = products.find((product) => product._id === productID);
-
-  if (!singleProduct) {
+  if (!product) {
     return <Loading />;
   }
 
-  const { name, price, image, company, description } = singleProduct;
-
+  const { name, price, image, company, description } = product;
   return (
     <div className="container mx-auto px-2">
       <div className="grid grid-cols-1 md:grid-cols-2">
@@ -50,7 +51,7 @@ const ProductDetails = () => {
           <p className="text-sm text-gray-500">
             {description.slice(0, 170)}...
           </p>
-          <AddToCard product={singleProduct} />
+          <AddToCard product={product} />
         </div>
       </div>
     </div>
