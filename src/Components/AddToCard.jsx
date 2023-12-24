@@ -1,18 +1,21 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaCheck } from "react-icons/fa6";
 import useAuth from "../Provider/useAuth";
 import Loading from "./Loading";
 
-// eslint-disable-next-line react/prop-types
 const AddToCard = ({ product }) => {
   const { user, loading } = useAuth();
   const email = user ? user.email : null;
-  // eslint-disable-next-line react/prop-types
   const { sizes, colors } = product;
   const [color, setColor] = useState(colors[0]);
   const [size, setSize] = useState(sizes[0]);
-  const quantity = 1;
+
+  const [quantity, setCartQuantity] = useState(1);
+  const setDecrease = () => {
+    quantity > 1 ? setCartQuantity(quantity - 1) : setCartQuantity(1);
+  };
   const handleAddToCart = () => {
     if (!user) {
       toast.error("Please log in to add to cart");
@@ -29,7 +32,7 @@ const AddToCard = ({ product }) => {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         toast.success("Successfully Added");
       });
   };
@@ -73,6 +76,30 @@ const AddToCard = ({ product }) => {
             </button>
           );
         })}
+      </div>
+
+      <div>
+        <div className="inline-flex items-center border">
+          <button
+            onClick={setDecrease}
+            type="button"
+            className="w-8 h-8 text-xl font-medium bg-gray-100 border hover:text-primary duration-300"
+          >
+            &minus;
+          </button>
+
+          <span className="px-2 sm:px-4 sm:text-base font-medium">
+            {quantity}
+          </span>
+
+          <button
+            onClick={() => setCartQuantity(quantity + 1)}
+            type="button"
+            className="w-8 h-8 text-xl font-medium bg-gray-100 border hover:text-primary duration-300"
+          >
+            &#43;
+          </button>
+        </div>
       </div>
       <button
         onClick={handleAddToCart}

@@ -45,7 +45,7 @@ const ProductCard = ({ product }) => {
       <div>
         <div>
           <Link to={`/${_id}`}>
-            <img src={image} className="max-w-[230px] mx-auto p-1" alt="" />
+            <img src={image} className="lg:max-w-[230px] mx-auto p-1" alt="" />
           </Link>
           <div className="space-y-1 px-3 pb-3">
             <Link
