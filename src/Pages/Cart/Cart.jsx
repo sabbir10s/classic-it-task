@@ -12,20 +12,20 @@ const Cart = () => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/cart/${email}`)
+      fetch(`https://classic-backend-optb.onrender.com/cart/${email}`)
         .then((res) => res.json())
         .then((data) => setCartItems(data.cart));
     }
   }, [email]);
 
-  if (loading) {
+  if (loading || cartItems.length === 0) {
     return <Loading />;
   }
 
   const reversedCartItems = [...cartItems].reverse();
   return (
-    <div className="container mx-auto px-2 min-h-screen">
-      {!cartItems.length ? (
+    <div className="container mx-auto px-2">
+      {cartItems.length ? (
         <>
           <div className="mt-4 ">
             <div className=" bg-gray-100 p-1 sm:p-2 rounded-[10px] shadow-custom">

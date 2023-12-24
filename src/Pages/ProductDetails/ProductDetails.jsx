@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const { productID } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${productID}`)
+    fetch(`https://classic-backend-optb.onrender.com/product/${productID}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((error) => {

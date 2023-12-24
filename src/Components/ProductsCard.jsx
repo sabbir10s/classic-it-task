@@ -1,13 +1,11 @@
+/* eslint-disable react/prop-types */
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import useAuth from "../Provider/useAuth";
-import Loading from "./Loading";
 
-// eslint-disable-next-line react/prop-types
 const ProductCard = ({ product }) => {
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
   const email = user ? user.email : null;
-  // eslint-disable-next-line react/prop-types
   const { _id, name, price, image, colors, sizes } = product;
   const quantity = 1;
   const color = colors[0];
@@ -18,7 +16,7 @@ const ProductCard = ({ product }) => {
       toast.error("Please log in to add to cart");
       return;
     }
-    const url = `http://localhost:5000/cart/${email}`;
+    const url = `https://classic-backend-optb.onrender.com/cart/${email}`;
     const cartInfo = { size, color, quantity, product };
     fetch(url, {
       method: "POST",
@@ -33,9 +31,9 @@ const ProductCard = ({ product }) => {
         toast.success("Successfully Added");
       });
   };
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <>Card Loading</>;
+  // }
   return (
     <div className="rounded-lg duration-300 transition ease-in  relative border border-transparent hover:shadow-lg hover:shadow-primary/40 hover:border-primary-400 group text-start">
       <div>

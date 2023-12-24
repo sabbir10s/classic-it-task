@@ -21,7 +21,7 @@ const AddToCard = ({ product }) => {
       toast.error("Please log in to add to cart");
       return;
     }
-    const url = `http://localhost:5000/cart/${email}`;
+    const url = `https://classic-backend-optb.onrender.com/cart/${email}`;
     const cartInfo = { size, color, quantity, product };
     fetch(url, {
       method: "POST",

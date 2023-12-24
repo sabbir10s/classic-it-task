@@ -16,11 +16,14 @@ const useAuth = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/api/user", {
-          headers: {
-            Authorization: token,
-          },
-        });
+        const response = await axios.get(
+          "https://classic-backend-optb.onrender.com/user",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
 
         setUser(response.data);
         setLoading(false);
