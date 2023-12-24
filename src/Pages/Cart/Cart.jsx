@@ -18,13 +18,13 @@ const Cart = () => {
     }
   }, [email]);
 
-  if (loading || cartItems.length === 0) {
+  if (loading) {
     return <Loading />;
   }
 
   const reversedCartItems = [...cartItems].reverse();
   return (
-    <div className="container mx-auto px-2">
+    <div className="container mx-auto px-2 min-h-screen">
       {cartItems.length ? (
         <>
           <div className="mt-4 ">

@@ -42,7 +42,10 @@ const Register = () => {
 
   const handleRegistration = async (e) => {
     e.preventDefault();
-
+    if (password.length < 6) {
+      toast.error(`Password must be at least 6 characters long`);
+      return;
+    }
     if (password !== confirmPassword) {
       setPasswordMismatch(true);
       return;

@@ -3,8 +3,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("sabbirahmed@gmail.com");
+  const [password, setPassword] = useState("123456");
   const navigate = useNavigate();
   const onLogin = async (userData) => {
     try {
@@ -63,6 +63,7 @@ const Login = () => {
           <div className=" text-center">
             <input
               required={true}
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="px-4 py-3  rounded-lg w-full focus:border-primary outline-none border"
               type="password"

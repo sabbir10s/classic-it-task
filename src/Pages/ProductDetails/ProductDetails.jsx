@@ -17,13 +17,17 @@ const ProductDetails = () => {
       });
   }, [productID]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!product) {
     return <Loading />;
   }
 
   const { name, price, image, company, description } = product;
   return (
-    <div className="container mx-auto px-2">
+    <div className="container mx-auto px-2 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="mx-auto">
           <img src={image} alt="" />

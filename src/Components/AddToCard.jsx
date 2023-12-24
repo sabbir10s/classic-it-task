@@ -4,21 +4,26 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaCheck } from "react-icons/fa6";
 import useAuth from "../Provider/useAuth";
 import Loading from "./Loading";
+import { useNavigate } from "react-router-dom";
 
 const AddToCard = ({ product }) => {
+  const navigate = useNavigate();
   const { user, loading } = useAuth();
   const email = user ? user.email : null;
+
   const { sizes, colors } = product;
   const [color, setColor] = useState(colors[0]);
   const [size, setSize] = useState(sizes[0]);
-
   const [quantity, setCartQuantity] = useState(1);
+
   const setDecrease = () => {
     quantity > 1 ? setCartQuantity(quantity - 1) : setCartQuantity(1);
   };
+
   const handleAddToCart = () => {
     if (!user) {
       toast.error("Please log in to add to cart");
+      navigate("/login");
       return;
     }
     const url = `https://classic-backend-optb.onrender.com/cart/${email}`;

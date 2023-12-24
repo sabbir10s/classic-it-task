@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../Provider/useAuth";
 
 const ProductCard = ({ product }) => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const email = user ? user.email : null;
   const { _id, name, price, image, colors, sizes } = product;
   const quantity = 1;
@@ -14,6 +15,7 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = () => {
     if (!user) {
       toast.error("Please log in to add to cart");
+      navigate("/login");
       return;
     }
     const url = `https://classic-backend-optb.onrender.com/cart/${email}`;
