@@ -21,6 +21,9 @@ const Cart = () => {
   if (loading) {
     return <Loading />;
   }
+
+  const reversedCartItems = [...cartItems].reverse();
+
   console.log(cartItems);
   return (
     <div className="container mx-auto px-2">
@@ -28,7 +31,7 @@ const Cart = () => {
         <>
           <div className="mt-4">
             <div className=" bg-gray-100 p-1 sm:p-2 rounded-[10px] shadow-custom">
-              <div className="hidden lg:block">
+              <div className="hidden md:block">
                 <div className="grid grid-cols-6 px-4 font-semibold py-4 uppercase text-[12px] ">
                   <h4 className="col-span-3">Product</h4>
                   <h4 className="text-center">Unite Price</h4>
@@ -37,15 +40,17 @@ const Cart = () => {
                 </div>
               </div>
               <div>
-                {cartItems.map(({ color, size, product, quantity }, idx) => (
-                  <CartItems
-                    key={idx}
-                    color={color}
-                    size={size}
-                    item={product}
-                    quantity={quantity}
-                  />
-                ))}
+                {reversedCartItems.map(
+                  ({ color, size, product, quantity }, idx) => (
+                    <CartItems
+                      key={idx}
+                      color={color}
+                      size={size}
+                      item={product}
+                      quantity={quantity}
+                    />
+                  )
+                )}
               </div>
             </div>
           </div>

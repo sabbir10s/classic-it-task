@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import Loading from "./Loading";
+import Loading from "../Components/Loading";
 import useAuth from "../Provider/useAuth";
 
 const Navbar = () => {

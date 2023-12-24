@@ -67,7 +67,7 @@ const CartItems = ({ color, size, quantity, item }) => {
             <button
               onClick={setDecrease}
               type="button"
-              className=" w-5 md:w-6 sm:w-8 h-5 md:h-6 sm:h-8 text-xs md:text-base sm:text-xl font-medium border border-primary-600 sm:border-0 bg-gray-50 rounded-[50%] text-primary-600 sm:text-black transition hover:opacity-75"
+              className="w-7 h-7 rounded-full text-xl font-medium sm:bg-gray-100 sm:border hover:text-primary duration-300"
             >
               &minus;
             </button>
@@ -79,7 +79,7 @@ const CartItems = ({ color, size, quantity, item }) => {
             <button
               onClick={() => setCartQuantity(cartQuantity + 1)}
               type="button"
-              className=" w-5 md:w-6 sm:w-8 h-5 md:h-6 sm:h-8 text-xs md:text-base sm:text-xl font-medium border border-primary-600 sm:border-0 bg-gray-50 rounded-[50%] text-primary-600 sm:text-black transition hover:opacity-75"
+              className="w-7 h-7 rounded-full text-xl font-medium sm:bg-gray-100 sm:border hover:text-primary duration-300"
             >
               &#43;
             </button>
